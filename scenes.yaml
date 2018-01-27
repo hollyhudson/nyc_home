@@ -1,0 +1,4 @@
+- name: evening
+  entities:
+    light.entry1: 
+      brightness: 50
