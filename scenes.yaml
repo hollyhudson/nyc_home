@@ -1,4 +1,57 @@
-- name: evening
+# here's a comment
+- name: Movie Time
   entities:
-    light.entry1: 
+    light.lamp:
+      state: on
+      brightness: 53
+      color_temp: 285
+    group.living:
+      state: on
+      brightness: 88
+      color_temp: 366  
+    light.bathroom1:
+      state: on
+      brightness: 75
+      color_temp: 370
+    light.bathroom2:
+      state: on
+      brightness: 75
+      color_temp: 370
+    light.tower1:
+      state: on
+      brightness: 254
+      color_temp: 370
+    light.tower2:
+      state: on
+      brightness: 254
+      color_temp: 370
+    light.entry1:
+      state: on
+      brightness: 180
+      color_temp: 367
+    light.entry2:
+      state: on
+      brightness: 180
+      color_temp: 367
+    light.kitchen1:
+      state: on
+      brightness: 254
+      color_temp: 370
+    light.kitchen2:
+      state: on
+      brightness: 254
+      color_temp: 370
+    light.kitchen3:
+      state: on
+      brightness: 254
+      color_temp: 370
+- name: Pause Movie
+  entities:
+    light.lamp:
+      state: on
+      brightness: 30
+      color_temp: 285
+    light.bathroom2:
+      state: on
       brightness: 50
+      color_temp: 453

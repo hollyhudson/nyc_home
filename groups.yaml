@@ -38,3 +38,12 @@ tower:
   entities:
     - light.tower1  
     - light.tower2  
+morning_tradfri:
+  entities:
+    - light.entry1
+    - light.entry2
+    - light.bathroom1
+    - light.bathroom2
+    - light.kitchen1
+    - light.kitchen2
+    - light.kitchen3

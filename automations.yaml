@@ -1,48 +1,61 @@
 # Tradfri color_temp must be between 250 and 454
-- alias: 'set to evening'
+# 20 min sunrise, (453 -> 250 or 667 -> 182) and 0 -> 255 in 2 stages
+# Stage 1: 14 min, 
+#   tradfri: brightness 0 -> 255
+#   LIFX: brightness 0 -> 170, color_temp 667 -> 344
+# Stage 2: 6 min 
+#   tradfri: color_temp 453 -> 250
+#   LIFX: brightness 170 -> 255, color_temp 344 -> 182
+#   hue: just turn on 182 mireds at 255 brightness
+
+# The sunrise sequence is split into stages because the tradfri can't 
+# transition color_temp and brightness at the same time
+- alias: 'sunrise init'
   trigger:
     platform: time
-    at: "17:13:00"
+    at: "06:39:00"
   action:
-    service: scene.turn_on
-    entity_id: scene.evening
-- alias: 'sunrise test'
-  trigger:
-    platform: time
-    at: "16:03:00"
-  action:
+    # Turn on the LIFX light initial (dim) state
     - service: light.turn_on
       data:
-        entity_id: light.bathroom2
+        entity_id: light.lamp
+        rgb_color: [255, 200, 0]
+        brightness: 30
+- alias: 'sunrise stage 1'
+  trigger:
+    platform: time
+    at: "06:39:05"
+  action:
+    # Turn on the tradfri lights to initial (dim) state
+    - service: light.turn_on
+      data:
+        entity_id: group.morning_tradfri
         color_temp: 453
         brightness: 50
+    # Transition stage 1
     - service: light.turn_on
       data:
-        entity_id: light.bathroom2
-        color_temp: 250
-        #brightness: 255
-        transition: 20
-- alias: 'set state test1'
+        entity_id: group.morning_tradfri
+        brightness: 255
+        transition: 840 # 14 min
+    - service: light.lifx_set_state
+      data:
+        entity_id: light.lamp
+        color_temp: 182
+        brightness: 255
+        # 1200 seconds = 20 min
+        transition: 1200
+- alias: 'sunrise test stage 2'
   trigger:
     platform: time
-    at: "16:27:00"
+    at: "06:55:00"
   action:
-    - service: light.turn_on
+      service: light.turn_on
       data:
-        entity_id: light.entry2
+        entity_id: group.morning_tradfri
         color_temp: 250
-        brightness: 200
-    - service: light.turn_off
-      data:
-        entity_id: light.entry2
-- alias: 'set state test2'
-  trigger:
-    platform: time
-    at: "16:27:01"
-  action:
-    - service: light.turn_off
-      data:
-        entity_id: light.entry2
+        transition: 360 # 6 min
+# old below
 - alias: 'sunrise start'
   trigger:
     platform: time
@@ -63,33 +76,3 @@
       brightness: 255
       # 900 seconds = 15 min
       transition: 900
-- alias: 'set afternoon hue'
-  trigger:
-    platform: time
-    at: "14:00:00"
-  action:
-    service: light.lifx_set_state
-    data:
-      entity_id: light.lamp
-      color_temp: 300
-      brightness: 80
-- alias: 'set evening hue'
-  trigger:
-    platform: time
-    at: "17:30:00"
-  action:
-    service: light.lifx_set_state
-    data:
-      entity_id: light.lamp
-      color_temp: 350 
-      brightness: 50
-- alias: 'set bedtime hue'
-  trigger:
-    platform: time
-    at: "21:00:00"
-  action:
-    service: light.lifx_set_state
-    data:
-      entity_id: light.lamp
-      color_temp: 667
-      brightness: 30
