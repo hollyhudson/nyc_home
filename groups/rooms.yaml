@@ -1,0 +1,31 @@
+entry:
+  name: Entry
+  entities:
+    - light.entry1
+    - light.entry2
+living:
+  name: Living Room
+  entities:
+    - light.track1
+    - light.track2
+    - light.track3
+    - light.track4
+tower:
+  name: Tower
+  entities:
+    - light.tower1  
+    - light.tower2  
+kitchen:
+  name: Kitchen
+  entities:
+    - light.kitchen1
+    - light.kitchen2
+bathroom:
+  name: Bathroom
+  entities:
+    - light.bathroom1
+    - light.bathroom2
+bedroom:
+  name: Bedroom
+  entities:
+    - light.lamp

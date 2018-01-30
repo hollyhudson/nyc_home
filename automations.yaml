@@ -29,13 +29,13 @@
     # Turn on the tradfri lights to initial (dim) state
     - service: light.turn_on
       data:
-        entity_id: group.morning_tradfri
+        entity_id: group.tradfri
         color_temp: 453
         brightness: 50
     # Transition stage 1
     - service: light.turn_on
       data:
-        entity_id: group.morning_tradfri
+        entity_id: group.tradfri
         brightness: 255
         transition: 840 # 14 min
     - service: light.lifx_set_state
@@ -52,7 +52,7 @@
   action:
       service: light.turn_on
       data:
-        entity_id: group.morning_tradfri
+        entity_id: group.tradfri
         color_temp: 250
         transition: 360 # 6 min
 # old below

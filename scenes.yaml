@@ -9,39 +9,19 @@
       state: on
       brightness: 88
       color_temp: 366  
-    light.bathroom1:
+    group.bathroom:
       state: on
       brightness: 75
       color_temp: 370
-    light.bathroom2:
-      state: on
-      brightness: 75
-      color_temp: 370
-    light.tower1:
+    group.tower:
       state: on
       brightness: 254
       color_temp: 370
-    light.tower2:
-      state: on
-      brightness: 254
-      color_temp: 370
-    light.entry1:
+    group.entry:
       state: on
       brightness: 180
       color_temp: 367
-    light.entry2:
-      state: on
-      brightness: 180
-      color_temp: 367
-    light.kitchen1:
-      state: on
-      brightness: 254
-      color_temp: 370
-    light.kitchen2:
-      state: on
-      brightness: 254
-      color_temp: 370
-    light.kitchen3:
+    group.kitchen:
       state: on
       brightness: 254
       color_temp: 370

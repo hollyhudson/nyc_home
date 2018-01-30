@@ -1,0 +1,29 @@
+# Describes how the HA dashboard display should look, I think
+group.lights_card:
+  friendly_name: Lights
+group.scenes_card:
+  friendly_name: Scenes
+# Lights
+group.entry:
+  icon: mdi:door
+  friendly_name: Entry  
+group.living:
+  icon: mdi:sofa
+  friendly_name: Living Room  
+group.tower:
+  icon: mdi:castle
+  friendly_name: Tower  
+group.kitchen:
+  icon: mdi:food-apple
+  friendly_name: Kitchen  
+group.bathroom:
+  icon: mdi:water
+  friendly_name: Bathroom  
+group.bedroom:
+  icon: mdi:hotel
+  friendly_name: Bedroom  
+# Scenes
+scene.movie_time:
+  icon: mdi:theater
+scene.pause_movie:
+  icon: mdi:pause

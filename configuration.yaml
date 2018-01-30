@@ -14,7 +14,7 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+# introduction:
 
 # Enables the frontend
 frontend:
@@ -41,6 +41,7 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
+# commenting out to try to not have *everything* show up on the dashboard
 discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
@@ -101,7 +102,7 @@ light track4:
 light lamp:
   platform: lifx
 
-group: !include groups.yaml
+group: !include_dir_merge_named groups/
 
 scene: !include scenes.yaml
 
