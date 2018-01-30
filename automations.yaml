@@ -76,3 +76,24 @@
       brightness: 255
       # 900 seconds = 15 min
       transition: 900
+
+### Triggering Frontend Themes
+- alias: 'startup theme'
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: pmxmonolight
+# set theme is not working, for some reason
+- alias: 'select theme'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_select.frontend_theme
+  action:
+    service: frontend.set_theme
+    data_template:
+      name: "{{ states.input_select.frontend_theme.state }}"

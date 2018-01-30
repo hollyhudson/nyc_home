@@ -1,9 +1,7 @@
-Tradfri:
+tradfri:
+  name: Tradfri
   entities:
-    - light.entry1
-    - light.entry2
-    - light.kitchen1
-    - light.kitchen2
-    - light.kitchen3
-    - light.bathroom1
-    - light.bathroom2
+    - group.entry
+    - group.tower
+    - group.kitchen
+    - group.bathroom

@@ -5,6 +5,8 @@ default_view:
   entities:
     - group.lights_card
     - group.scenes_card
+    - media_player.spotify
+    - group.themes_card
 # The cards
 lights_card:
   name: Lights
@@ -18,5 +20,12 @@ lights_card:
 scenes_card:
   name: Scenes
   entities:
+    - scene.morning_lights
+    - scene.afternoon_lights
     - scene.movie_time
     - scene.pause_movie
+    - scene.all_off
+themes_card:
+  name: Themes
+  entities:
+    - input_select.frontend_theme

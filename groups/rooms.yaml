@@ -15,6 +15,7 @@ tower:
   entities:
     - light.tower1  
     - light.tower2  
+    - light.tower3  
 kitchen:
   name: Kitchen
   entities:

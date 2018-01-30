@@ -1,0 +1,17 @@
+# item_name: 
+#   name: friendly name 
+#   options:
+#     - Option One
+#     - Option Two
+#   initial: Option Two
+#   icon: mdi:panda
+####
+# for booleans variations of On Yes Y Off No N will be replaced with true/false
+
+frontend_theme:
+  name: Themes
+  options:
+    - pmxmonolight
+    - pmxmononight
+    - dark 
+  icon: mdi:theme-light-dark

@@ -18,6 +18,9 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+  themes: !include_dir_merge_named themes/
+
+input_select: !include input_select.yaml
 
 # Enables configuration UI
 config:
@@ -58,6 +61,12 @@ map:
 
 # Track the sun
 sun:
+
+# Spotify
+media_player:
+  - platform: spotify
+    client_id: !secret spotify_id
+    client_secret: !secret spotify_secret
 
 # Weather prediction
 sensor:
