@@ -30,3 +30,4 @@ bedroom:
   name: Bedroom
   entities:
     - light.lamp
+    - light.sad_lamp

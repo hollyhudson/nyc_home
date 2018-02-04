@@ -22,6 +22,9 @@ scenes_card:
   entities:
     - scene.morning_lights
     - scene.afternoon_lights
+    - scene.evening_lights
+    - scene.bedtime_lights
+    - scene.dinner_and_a_movie
     - scene.movie_time
     - scene.pause_movie
     - scene.all_off

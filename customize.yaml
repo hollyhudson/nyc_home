@@ -41,18 +41,22 @@ scene.morning_lights:
   icon: mdi:weather-sunset-up
 scene.afternoon_lights:
   icon: mdi:weather-sunny
-#scene.evening_lights:
-#  icon: mdi:weather-sunset-down
-#scene.bedtime_lights:
-#  icon: mdi:weather-night
+scene.evening_lights:
+  icon: mdi:weather-sunset-down
+scene.bedtime_lights:
+  icon: mdi:weather-night
+scene.dinner_and_a_movie:
+  icon: mdi:popcorn
 scene.movie_time:
-  icon: mdi:theater
+  icon: mdi:filmstrip
 scene.pause_movie:
   icon: mdi:pause
-#scene.dinner_and_a_movie:
-#  icon:
 scene.all_off:
   icon: mdi:lightbulb
   
 # Themes Card
 
+# Custom Components
+
+light.sad_lamp:
+  icon: mdi:lightbulb

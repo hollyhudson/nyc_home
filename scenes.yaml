@@ -15,6 +15,7 @@
       color_temp: 250
     input_select.frontend_theme:
       option: pmxmonolight
+
 - name: Afternoon Lights
   entities:
     light.lamp:
@@ -44,35 +45,118 @@
     input_select.frontend_theme:
       option: pmxmonolight
     
-# - name: Evening Lights
-# - name: Bedtime Lights
+- name: Evening Lights
+  entities:
+    light.lamp:
+      state: on
+      brightness: 184
+      color_temp: 400
+    group.entry:
+      state: on
+      brightness: 119
+      color_temp: 450
+    group.living:
+      state: on
+      brightness: 81
+      color_temp: 443
+    group.kitchen:
+      state: on
+      brightness: 203
+      color_temp: 367
+    group.tower:
+      state: on
+      brightness: 121
+    group.bathroom:
+      state: on
+      brightness: 25
+      color_temp: 450
+    input_select.frontend_theme:
+      option: pmxmononight
+
+- name: Bedtime Lights
+  entities:
+    light.lamp:
+      state: on
+      brightness: 66
+      color_temp: 285
+    group.living:
+      state: on
+      brightness: 1
+      color_temp: 500
+    light.bathroom1:
+      state: on
+      brightness: 1
+      color_temp: 450
+    light.bathroom2:
+      state: off
+    group.entry:
+      state: off
+    group.tower:
+      state: off
+    group.kitchen:
+      state: off
+    input_select.frontend_theme:
+      option: pmxmononight
+
 - name: Movie Time
   entities:
     group.all_lights:
       state: off
+    group.living:
+      state: off
+    input_select.frontend_theme:
+      option: pmxmononight
+
 - name: Pause Movie
   entities:
+    light.lamp:
+      state: on
+      brightness: 100
+      color_temp: 400
     group.living:
       state: on
-      brightness: 30
-      color_temp: 600 
+      brightness: 81
+      color_temp: 443 
     group.kitchen:
       state: on
-      brightness: 50
+      brightness: 101
       color_temp: 454
-    light.bathroom2:
+    light.bathroom1:
       state: on
-      brightness: 50
-      color_temp: 454
+      brightness: 1
+      color_temp: 450
+    light.bathroom2:
+      state: off
     group.tower:
       state: on
       brightness: 50
       color_temp: 454
+    group.entry:
+      state: off
+
+- name: Dinner and a Movie
+  entities:
     light.lamp:
+      state: on
+      brightness: 100
+      color_temp: 400
+    group.tower:
+      state: on
+      brightness: 121
+      color_temp: 454
+    light.bathroom1:
+      state: on
+      brightness: 1
+      color_temp: 450
+    light.bathroom2:
+      state: off
+    group.living:
+      state: off
+    group.kitchen:
       state: off
     group.entry:
       state: off
-# - name: Dinner and a Movie
+    
 - name: All Off
   entities:
     group.all_lights:
