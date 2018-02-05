@@ -77,12 +77,12 @@
   entities:
     light.lamp:
       state: on
-      brightness: 66
-      color_temp: 285
+      brightness: 20
+      rgb_color: [255, 50, 0]
     group.living:
       state: on
-      brightness: 1
-      color_temp: 500
+      brightness: 10
+      rgb_color: [255, 50, 0]
     light.bathroom1:
       state: on
       brightness: 1
