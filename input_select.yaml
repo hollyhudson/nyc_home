@@ -10,8 +10,21 @@
 
 frontend_theme:
   name: Themes
+  icon: mdi:theme-light-dark
   options:
     - pmxmonolight
     - pmxmononight
     - dark 
-  icon: mdi:theme-light-dark
+
+alarmclock_time:
+  name: Alarm Time
+  icon: mdi:alarm
+  initial: "7:00"
+  options:
+    - "5:45"
+    - "6:00"
+    - "7:00"
+    - "7:15"
+    - "8:00"
+    - "8:30"
+    - "9:00"

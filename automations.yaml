@@ -14,6 +14,7 @@
   trigger:
     platform: time
     at: "06:39:00"
+    #at: "05:24:00"
   action:
     # Turn on the LIFX light initial (dim) state
     - service: light.turn_on
@@ -25,6 +26,7 @@
   trigger:
     platform: time
     at: "06:39:05"
+    #at: "05:24:05"
   action:
     # Turn on the tradfri lights to initial (dim) state
     - service: light.turn_on
@@ -49,6 +51,7 @@
   trigger:
     platform: time
     at: "06:55:00"
+    #at: "05:40:00"
   action:
       service: light.turn_on
       data:
@@ -56,26 +59,26 @@
         color_temp: 250
         transition: 360 # 6 min
 # old below
-- alias: 'sunrise start'
-  trigger:
-    platform: time
-    at: "06:45:00"
-  action:
-    service: light.turn_on
-    data:
-      entity_id: light.lamp
-- alias: 'sunrise sequence'
-  trigger:
-    platform: time
-    at: "06:46:00"
-  action:
-    service: light.lifx_set_state
-    data:
-      entity_id: light.lamp
-      color_temp: 182
-      brightness: 255
-      # 900 seconds = 15 min
-      transition: 900
+#- alias: 'sunrise start'
+#  trigger:
+#    platform: time
+#    at: "06:45:00"
+#  action:
+#    service: light.turn_on
+#    data:
+#      entity_id: light.lamp
+#- alias: 'sunrise sequence'
+#  trigger:
+#    platform: time
+#    at: "06:46:00"
+#  action:
+#    service: light.lifx_set_state
+#    data:
+#      entity_id: light.lamp
+#      color_temp: 182
+#      brightness: 255
+#      # 900 seconds = 15 min
+#      transition: 900
 
 ### Triggering Frontend Themes
 - alias: 'startup theme'

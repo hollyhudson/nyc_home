@@ -70,6 +70,12 @@ map:
 # Track the sun
 sun:
 
+# Recognize workdays for automations
+binary_sensor:
+  - platform: workday
+    country: US
+    workdays: [ mon, tue, wed, thu, fri ]
+
 # Spotify
 media_player:
   - platform: spotify
@@ -95,11 +101,11 @@ light tower3:
   platform: tradfri
 
 light kitchen1:
-  platform: tradfri
+  platform: hue
 light kitchen2:
-  platform: tradfri
+  platform: hue
 light kitchen3:
-  platform: tradfri
+  platform: hue
 
 light entry1:
   platform: tradfri

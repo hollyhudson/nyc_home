@@ -89,11 +89,17 @@
       color_temp: 450
     light.bathroom2:
       state: off
+    light.kitchen1:
+      state: on
+      brightness: 1
+      color_temp: 450
+    light.kitchen2:
+      state: off
+    light.kitchen3:
+      state: off
     group.entry:
       state: off
     group.tower:
-      state: off
-    group.kitchen:
       state: off
     input_select.frontend_theme:
       option: pmxmononight

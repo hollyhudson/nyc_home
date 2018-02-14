@@ -21,6 +21,7 @@ kitchen:
   entities:
     - light.kitchen1
     - light.kitchen2
+    - light.kitchen3
 bathroom:
   name: Bathroom
   entities:
