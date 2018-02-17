@@ -13,7 +13,8 @@
 - alias: 'sunrise init'
   trigger:
     platform: time
-    at: "06:39:00"
+    at: "07:39:00"
+    #at: "06:39:00"
     #at: "05:24:00"
   action:
     # Turn on the LIFX light initial (dim) state
@@ -25,7 +26,8 @@
 - alias: 'sunrise stage 1'
   trigger:
     platform: time
-    at: "06:39:05"
+    at: "07:39:05"
+    #at: "06:39:05"
     #at: "05:24:05"
   action:
     # Turn on the tradfri lights to initial (dim) state
@@ -50,7 +52,8 @@
 - alias: 'sunrise test stage 2'
   trigger:
     platform: time
-    at: "06:55:00"
+    at: "07:55:00"
+    #at: "06:55:00"
     #at: "05:40:00"
   action:
       service: light.turn_on
