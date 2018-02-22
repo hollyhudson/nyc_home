@@ -27,11 +27,12 @@ config:
 ios:
 
 # Enable MQ Telemetry Transport protocol
+# with no arguments it will setup the internal broker
 mqtt:
-  broker: 127.0.0.1
-  port: 1883
-  username: !secret mqtt_username
-  password: !secret mqtt_password
+  #broker: 127.0.0.1
+  #port: 1883
+  #username: !secret mqtt_username
+  #password: !secret mqtt_password
 
 #sad_lamp:
 #  topic: sad_lamp
@@ -71,10 +72,10 @@ map:
 sun:
 
 # Recognize workdays for automations
-binary_sensor:
-  - platform: workday
-    country: US
-    workdays: [ mon, tue, wed, thu, fri ]
+#binary_sensor:
+#  - platform: workday
+#    country: US
+#    workdays: [ mon, tue, wed, thu, fri ]
 
 # Spotify
 media_player:
@@ -144,4 +145,31 @@ scene: !include scenes.yaml
 automation: !include automations.yaml
         
 script: !include scripts.yaml
+
+
+logger:
+  default: warning
+  logs:
+    homeassistant.components.mqtt: debug
+
+binary_sensor 18fe34d40b4d:
+  - name:               "Motion sensor"
+    platform:           mqtt
+    state_topic:        "/18fe34d40b4d/in0/state"
+    device_class:       motion
+
+  - name:               "Front door"
+    platform:           mqtt
+    state_topic:        "/18fe34d40b4d/in1/state"
+
+light 18fe34d40b4d:
+  - name:               "Thing Red"
+    platform:           mqtt
+    command_topic:      "/18fe34d40b4d/out2/status"
+    state_topic:        "/18fe34d40b4d/out2/state"
+
+  - name:               "Thing Blue"
+    platform:           mqtt
+    command_topic:      "/18fe34d40b4d/out3/status"
+    state_topic:        "/18fe34d40b4d/out3/state"
 

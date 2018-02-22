@@ -103,3 +103,31 @@
     service: frontend.set_theme
     data_template:
       name: "{{ states.input_select.frontend_theme.state }}"
+
+
+## Turn the tower light on and off when the motion sensor triggers
+- alias: 'Motion Sensor ON'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor
+    to: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.bathroom1
+    data:
+      color_temp: 500
+      transition: 10
+      brightness: 10
+
+- alias: 'Motion Sensor OFF'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor
+    to: 'off'
+    for:
+      seconds: 10
+  action:
+    service: light.turn_off
+    entity_id: light.bathroom1
+    data:
+      transition: 10
