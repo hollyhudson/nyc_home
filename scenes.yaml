@@ -106,9 +106,33 @@
 
 - name: Movie Time
   entities:
-    group.all_lights:
+    group.entry:
       state: off
     group.living:
+      state: off
+    light.tower1:
+      state: on
+      brightness: 1
+      color_temp: 450
+    light.tower2:
+      state: off
+    light.tower3:
+      state: off
+    light.kitchen1:
+      state: on
+      brightness: 1
+      color_temp: 450
+    light.kitchen2:
+      state: off
+    light.kitchen3:
+      state: off
+    light.bathroom1:
+      state: on
+      brightness: 1
+      color_temp: 450
+    light.bathroom2:
+      state: off
+    light.lamp:
       state: off
     input_select.frontend_theme:
       option: pmxmononight
@@ -146,10 +170,14 @@
       state: on
       brightness: 100
       color_temp: 400
-    group.tower:
+    light.tower1:
       state: on
       brightness: 121
       color_temp: 454
+    light.tower2:
+      state: off
+    light.tower3:
+      state: off
     light.bathroom1:
       state: on
       brightness: 1
@@ -158,7 +186,13 @@
       state: off
     group.living:
       state: off
-    group.kitchen:
+    light.kitchen1:
+      state: on
+      brightness: 1
+      color_temp: 450
+    light.kitchen2:
+      state: off
+    light.kitchen3:
       state: off
     group.entry:
       state: off
