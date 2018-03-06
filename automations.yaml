@@ -8,14 +8,21 @@
 #   LIFX: brightness 170 -> 255, color_temp 344 -> 182
 #   hue: just turn on 182 mireds at 255 brightness
 
+
+# .....................................................
+# Morning sequence for weekdays
+# .....................................................
 # The sunrise sequence is split into stages because the tradfri can't 
 # transition color_temp and brightness at the same time
-- alias: 'sunrise init'
+- alias: 'sunrise init wkday'
   trigger:
     platform: time
-    #at: "07:39:00"
     at: "06:39:00"
     #at: "05:24:00"
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
   action:
     # Turn on the LIFX light initial (dim) state
     - service: light.turn_on
@@ -23,12 +30,15 @@
         entity_id: light.lamp
         rgb_color: [255, 200, 0]
         brightness: 30
-- alias: 'sunrise stage 1'
+- alias: 'sunrise stage 1 wkday'
   trigger:
     platform: time
-    #at: "07:39:05"
     at: "06:39:05"
     #at: "05:24:05"
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
   action:
     # Turn on the tradfri lights to initial (dim) state
     - service: light.turn_on
@@ -49,41 +59,90 @@
         brightness: 255
         # 1200 seconds = 20 min
         transition: 1200
-- alias: 'sunrise test stage 2'
+- alias: 'sunrise test stage 2 wkday'
   trigger:
     platform: time
-    #at: "07:55:00"
     at: "06:55:00"
     #at: "05:40:00"
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
   action:
       service: light.turn_on
       data:
         entity_id: group.tradfri
         color_temp: 250
         transition: 360 # 6 min
-# old below
-#- alias: 'sunrise start'
-#  trigger:
-#    platform: time
-#    at: "06:45:00"
-#  action:
-#    service: light.turn_on
-#    data:
-#      entity_id: light.lamp
-#- alias: 'sunrise sequence'
-#  trigger:
-#    platform: time
-#    at: "06:46:00"
-#  action:
-#    service: light.lifx_set_state
-#    data:
-#      entity_id: light.lamp
-#      color_temp: 182
-#      brightness: 255
-#      # 900 seconds = 15 min
-#      transition: 900
 
-### Triggering Frontend Themes
+# .....................................................
+# Morning sequence for weekdays
+# .....................................................
+# The sunrise sequence is split into stages because the tradfri can't 
+# transition color_temp and brightness at the same time
+- alias: 'sunrise init wkend'
+  trigger:
+    platform: time
+    at: "07:39:00"
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
+  action:
+    # Turn on the LIFX light initial (dim) state
+    - service: light.turn_on
+      data:
+        entity_id: light.lamp
+        rgb_color: [255, 200, 0]
+        brightness: 30
+- alias: 'sunrise stage 1 wkend'
+  trigger:
+    platform: time
+    at: "07:39:05"
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
+  action:
+    # Turn on the tradfri lights to initial (dim) state
+    - service: light.turn_on
+      data:
+        entity_id: group.tradfri
+        color_temp: 453
+        brightness: 50
+    # Transition stage 1
+    - service: light.turn_on
+      data:
+        entity_id: group.tradfri
+        brightness: 255
+        transition: 840 # 14 min
+    - service: light.lifx_set_state
+      data:
+        entity_id: light.lamp
+        color_temp: 182
+        brightness: 255
+        # 1200 seconds = 20 min
+        transition: 1200
+- alias: 'sunrise test stage 2 wkend'
+  trigger:
+    platform: time
+    at: "07:55:00"
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
+  action:
+      service: light.turn_on
+      data:
+        entity_id: group.tradfri
+        color_temp: 250
+        transition: 360 # 6 min
+
+
+
+# ..............................................
+# Triggering Frontend Themes
+# ..............................................
 - alias: 'startup theme'
   initial_state: 'on'
   trigger:

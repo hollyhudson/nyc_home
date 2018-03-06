@@ -72,10 +72,9 @@ map:
 sun:
 
 # Recognize workdays for automations
-#binary_sensor:
-#  - platform: workday
-#    country: US
-#    workdays: [ mon, tue, wed, thu, fri ]
+binary_sensor:
+  - platform: workday
+    country: US
 
 # Spotify
 media_player:
