@@ -14,7 +14,8 @@
 # .....................................................
 # The sunrise sequence is split into stages because the tradfri can't 
 # transition color_temp and brightness at the same time
-- alias: 'sunrise init wkday'
+- id: sunrise_init_wkday
+  alias: 'sunrise init wkday'
   trigger:
     platform: time
     at: "06:39:00"
@@ -30,7 +31,8 @@
         entity_id: light.lamp
         rgb_color: [255, 200, 0]
         brightness: 30
-- alias: 'sunrise stage 1 wkday'
+- id: sunrise_weekday_stage_1
+  alias: 'sunrise weekday stage 1'
   trigger:
     platform: time
     at: "06:39:05"
@@ -59,7 +61,8 @@
         brightness: 255
         # 1200 seconds = 20 min
         transition: 1200
-- alias: 'sunrise test stage 2 wkday'
+- id: sunrise_weekday_stage_2
+  alias: 'sunrise weekday stage 2'
   trigger:
     platform: time
     at: "06:55:00"
@@ -80,7 +83,8 @@
 # .....................................................
 # The sunrise sequence is split into stages because the tradfri can't 
 # transition color_temp and brightness at the same time
-- alias: 'sunrise init wkend'
+- id: sunrise_init_wkend
+  alias: 'sunrise init wkend'
   trigger:
     platform: time
     at: "07:39:00"
@@ -95,7 +99,8 @@
         entity_id: light.lamp
         rgb_color: [255, 200, 0]
         brightness: 30
-- alias: 'sunrise stage 1 wkend'
+- id: sunrise_weekend_stage_1
+  alias: 'sunrise weekend stage 1'
   trigger:
     platform: time
     at: "07:39:05"
@@ -123,7 +128,8 @@
         brightness: 255
         # 1200 seconds = 20 min
         transition: 1200
-- alias: 'sunrise test stage 2 wkend'
+- id: sunrise_weekend_stage_2
+  alias: 'sunrise weekend stage 2'
   trigger:
     platform: time
     at: "07:55:00"

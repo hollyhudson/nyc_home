@@ -1,13 +1,24 @@
 # A view is a tab.  view: yes means "make this a tab"
 # the default_view is the main tab
+
+# ...............................................
+# Main tab
+# ...............................................
 default_view:
+  name: Main
   view: yes
   entities:
     - group.lights_card
     - group.scenes_card
     - media_player.spotify
     - group.themes_card
-# The cards
+    - device_tracker.adelaide
+    - sensor.adelaide_battery_level
+    - sensor.trmm_battery_level
+    - sensor.opal_battery_level
+    - sensor.gypsum_battery_level
+
+# Cards on the Main tab
 lights_card:
   name: Lights
   entities:
@@ -32,3 +43,18 @@ themes_card:
   name: Themes
   entities:
     - input_select.frontend_theme
+
+
+# ...............................................
+# Automations tab
+# ...............................................
+automation:
+  name: Automations
+  view: yes
+  entities:
+    - automation.sunrise_init_wkday
+    - automation.sunrise_weekday_stage_1
+    - automation.sunrise_weekday_stage_2
+    - automation.sunrise_init_wkend
+    - automation.sunrise_weekend_stage_1
+    - automation.sunrise_weekend_stage_2

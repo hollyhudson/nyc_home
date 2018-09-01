@@ -19,13 +19,13 @@ tower:
 kitchen:
   name: Kitchen
   entities:
-    - light.kitchen1
+    - light.kitchen_color
     - light.kitchen2
     - light.kitchen3
 bathroom:
   name: Bathroom
   entities:
-    - light.bathroom1
+    - light.bathroomcolor
     - light.bathroom2
 bedroom:
   name: Bedroom

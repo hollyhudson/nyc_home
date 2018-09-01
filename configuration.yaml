@@ -94,13 +94,13 @@ tts:
 cloud:
 
 light tower1:
-  platform: tradfri
+  platform: hue
 light tower2:
-  platform: tradfri
+  platform: hue
 light tower3:
-  platform: tradfri
+  platform: hue
 
-light kitchen1:
+light kitchen_color:
   platform: hue
 light kitchen2:
   platform: hue
@@ -108,14 +108,14 @@ light kitchen3:
   platform: hue
 
 light entry1:
-  platform: tradfri
+  platform: hue
 light entry2:
-  platform: tradfri
+  platform: hue
 
-light bathroom1:
-  platform: tradfri
+light bathroomcolor:
+  platform: hue
 light bathroom2:
-  platform: tradfri
+  platform: hue
 
 light track1:
   platform: hue

@@ -9,6 +9,14 @@
       state: on
       brightness: 255
       color_temp: 153
+    light.kitchen_color:
+      state: on
+      brightness: 255
+      color_temp: 153
+    light.bathroomcolor:
+      state: on
+      brightness: 255
+      color_temp: 153
     group.tradfri:
       state: on
       brightness: 255
@@ -30,18 +38,14 @@
       state: on
       brightness: 220
       color_temp: 280
-    group.tower:
-      state: on
-      brightness: 200
-      color_temp: 280
     group.kitchen:
       state: on
-      brightness: 240
-      color_temp: 260
+      brightness: 220
+      color_temp: 280
     group.bathroom:
       state: on
-      brightness: 200
-      color_temp: 300
+      brightness: 230
+      color_temp: 220
     input_select.frontend_theme:
       option: pmxmonolight
     
@@ -66,6 +70,7 @@
     group.tower:
       state: on
       brightness: 121
+      color_temp: 367
     group.bathroom:
       state: on
       brightness: 25
@@ -83,16 +88,16 @@
       state: on
       brightness: 10
       rgb_color: [255, 50, 0]
-    light.bathroom1:
+    light.bathroomcolor:
       state: on
-      brightness: 1
-      color_temp: 450
+      brightness: 10
+      rgb_color: [255, 50, 0]
     light.bathroom2:
       state: off
-    light.kitchen1:
+    light.kitchen_color:
       state: on
-      brightness: 1
-      color_temp: 450
+      brightness: 10
+      rgb_color: [255, 50, 0]
     light.kitchen2:
       state: off
     light.kitchen3:
@@ -118,7 +123,7 @@
       state: off
     light.tower3:
       state: off
-    light.kitchen1:
+    light.kitchen_color:
       state: on
       brightness: 1
       color_temp: 450
@@ -126,7 +131,7 @@
       state: off
     light.kitchen3:
       state: off
-    light.bathroom1:
+    light.bathroomcolor:
       state: on
       brightness: 1
       color_temp: 450
